@@ -1,2 +1,3 @@
-# AsyncOperation
-Custom async Operation implementation in Swift
+# CustomOperation
+
+Customizable Operation (NSOperation) subclass and block AsyncOperation written in Swift

@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "AsyncOperation",
+    name: "CustomOperation",
     platforms: [
         .iOS(.v10),
         .macOS(.v10_12),
@@ -12,15 +12,10 @@ let package = Package(
         .tvOS(.v10)
     ],
     products: [
-        .library(name: "AsyncOperation", targets: ["AsyncOperation"]),
-    ],
-    dependencies: [
-        .package(url: "https://github.com/Quick/Quick.git", from: "2.0.0"),
-        .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.0"),
+        .library(name: "CustomOperation", targets: ["CustomOperation"]),
     ],
     targets: [
-        .target(name: "AsyncOperation", dependencies: [], path: "AsyncOperation"),
-        .testTarget(name: "AsyncOperationTests", dependencies: ["AsyncOperation", "Quick", "Nimble"], path: "AsyncOperationTests")
+        .target(name: "CustomOperation", dependencies: [], path: "CustomOperation"),
     ],
     swiftLanguageVersions: [ .v5 ]
 )
