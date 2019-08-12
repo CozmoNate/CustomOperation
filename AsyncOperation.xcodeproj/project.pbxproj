@@ -158,6 +158,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E6398A72301C74D00D5D46F /* AsyncOperation.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = AsyncOperation.podspec; sourceTree = "<group>"; };
 		"AsyncOperation::AsyncOperation::Product" /* AsyncOperation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AsyncOperation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AsyncOperation::AsyncOperationTests::Product" /* AsyncOperationTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AsyncOperationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Nimble::Nimble::Product" /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,16 +430,16 @@
 			path = include;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
+				7E6398A72301C74D00D5D46F /* AsyncOperation.podspec */,
 				OBJ_7 /* Sources */,
 				OBJ_14 /* Tests */,
 				OBJ_18 /* Dependencies */,
 				OBJ_111 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_52 /* Nimble 8.0.2 */ = {
@@ -708,7 +709,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_111 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
