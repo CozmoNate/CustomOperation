@@ -37,11 +37,27 @@ extension OperationQueue {
     public func addOperation(action: @escaping AsyncOperation.Action) -> Operation {
 
         let operation = AsyncOperation(execute: action)
+        
         addOperation(operation)
 
         return operation
     }
 
+    @discardableResult
+    public func addOperation(queue: DispatchQueue, action: @escaping () -> Void) -> Operation {
+
+        let operation = AsyncOperation { completion in
+            queue.async {
+                action()
+                completion()
+            }
+        }
+        
+        addOperation(operation)
+
+        return operation
+    }
+    
     @discardableResult
     public func addOperation(queue: DispatchQueue, action: @escaping AsyncOperation.Action) -> Operation {
 
