@@ -31,7 +31,7 @@
 
 import Foundation
 
-public class CustomOperation: Operation {
+open class CustomOperation: Operation {
 
     public enum State {
         case initial
@@ -89,14 +89,25 @@ public class CustomOperation: Operation {
         willSet { if isReady != newValue { willChangeValue(forKey: "isReady") } }
         didSet { if isReady != oldValue { didChangeValue(forKey: "isReady") } }
     }
+    
+    public init(isReady: Bool = true) {
+        super.init()
 
-    override public func start() {
+        if isReady { state = .ready }
+    }
 
-        if isCancelled {
+    override public func main() {
+        guard !isCancelled else {
             state = .finished
             return
         }
-
+        
+        state = .executing
+        
         main()
+    }
+
+    func finish() {
+        state = .finished
     }
 }

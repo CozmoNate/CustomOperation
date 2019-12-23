@@ -42,19 +42,11 @@ public class AsyncOperation: CustomOperation {
 
     public init(isReady: Bool = true, execute action: @escaping Action) {
         self.action = action
-
-        super.init()
-
-        if isReady { state = .ready }
+        super.init(isReady: isReady)
     }
 
     override public func main() {
-
-        state = .executing
-
-        action {
-            self.state = .finished
-        }
+        action { self.finish() }
     }
 
 }
