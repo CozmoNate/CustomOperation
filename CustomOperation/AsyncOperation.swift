@@ -40,9 +40,12 @@ public class AsyncOperation: CustomOperation {
 
     private var action: Action
 
-    public init(isReady: Bool = true, execute action: @escaping Action) {
+    public init(execute action: @escaping Action) {
         self.action = action
-        super.init(isReady: isReady)
+        
+        super.init()
+        
+        ready()
     }
 
     public override func execute() {

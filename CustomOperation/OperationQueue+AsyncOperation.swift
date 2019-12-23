@@ -71,6 +71,7 @@ extension OperationQueue {
         let operation = AsyncOperation { completion in
             queue.async { action(completion) }
         }
+        
         addOperation(operation)
 
         return operation
@@ -102,6 +103,7 @@ extension OperationQueue {
         let operation = AsyncOperation { completion in
             queue.sync { action(completion) }
         }
+        
         addOperation(operation)
 
         return operation

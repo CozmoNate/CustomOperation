@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CustomOperation'
-  s.version          = '1.3.0'
+  s.version          = '1.3.1'
   s.summary          = 'Custom async Operation implementation in Swift'
   s.homepage         = 'https://github.com/kzlekk/AsyncOperation'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

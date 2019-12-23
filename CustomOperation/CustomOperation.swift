@@ -89,22 +89,17 @@ open class CustomOperation: Operation {
         willSet { if isReady != newValue { willChangeValue(forKey: "isReady") } }
         didSet { if isReady != oldValue { didChangeValue(forKey: "isReady") } }
     }
-    
-    public init(isReady: Bool = true) {
-        super.init()
-
-        if isReady { state = .ready }
-    }
 
     override open func main() {
-        guard !isCancelled else {
-            state = .finished
-            return
-        }
+        guard !isCancelled else { return }
         
         state = .executing
         
         execute()
+    }
+    
+    open func ready() {
+        state = .ready
     }
     
     open func execute() {
