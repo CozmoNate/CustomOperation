@@ -104,7 +104,11 @@ open class CustomOperation: Operation {
         
         state = .executing
         
-        main()
+        execute()
+    }
+    
+    open func execute() {
+        fatalError("Default 'execute' implementation called!")
     }
 
     open func finish() {

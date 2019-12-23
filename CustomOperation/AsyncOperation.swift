@@ -45,7 +45,7 @@ public class AsyncOperation: CustomOperation {
         super.init(isReady: isReady)
     }
 
-    override public func main() {
+    public override func execute() {
         action { self.finish() }
     }
 
