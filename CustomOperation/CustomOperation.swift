@@ -40,19 +40,19 @@ open class CustomOperation: Operation {
         case finished
     }
 
-    override public var isReady: Bool {
+    override open var isReady: Bool {
         return isReadyValue
     }
 
-    override public var isExecuting: Bool {
+    override open var isExecuting: Bool {
         return isExecutingValue
     }
 
-    override public var isFinished: Bool {
+    override open var isFinished: Bool {
         return isFinishedValue
     }
 
-    public var state: State = .initial {
+    open var state: State = .initial {
         didSet {
             switch state {
 
@@ -96,7 +96,7 @@ open class CustomOperation: Operation {
         if isReady { state = .ready }
     }
 
-    override public func main() {
+    override open func main() {
         guard !isCancelled else {
             state = .finished
             return
@@ -107,7 +107,7 @@ open class CustomOperation: Operation {
         main()
     }
 
-    func finish() {
+    open func finish() {
         state = .finished
     }
 }
